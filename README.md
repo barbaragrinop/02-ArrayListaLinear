@@ -8,6 +8,6 @@ Faça um fork deste repositorio e implemente a função buscarElemento
 * Se encontrado exibe a posição do numero na lista
 * Se não econtrado exibe "elemento não encontrado" 
 
+<br><br>Barbara Hellen da Silva Pereira
 
-Barbara Hellen da Silva Pereira
 barbara.pereira10@fatec.sp.gov.br
