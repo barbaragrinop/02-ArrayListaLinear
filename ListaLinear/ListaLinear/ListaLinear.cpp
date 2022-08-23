@@ -12,9 +12,10 @@ void buscarElemento();
 //--------------------------
 
 
-const int MAX = 2;;
+const int MAX = 5;
 int lista[MAX]{};
 int nElementos = 0;
+int opcaoEscolhida;
 
 
 int main()
@@ -103,5 +104,15 @@ void inserirElemento()
 
 void buscarElemento()
 {
+	cout << "Digite o elemento a ser buscado: ";
+	cin >> opcaoEscolhida;
+	bool existe = false;
+	for (int x = 0; x < MAX; x++) {
+		if (opcaoEscolhida == lista[x]) {
+			existe = true;
+		}
+	}
 
+	if (existe) cout << "\n\nValor " << opcaoEscolhida << " existe na lista\n\n";
+	if (!existe) cout << "\n\nValor " << opcaoEscolhida << " não existe na lista\n\n";
 }
