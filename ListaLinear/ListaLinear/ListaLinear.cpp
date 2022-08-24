@@ -11,12 +11,10 @@ void inserirElemento();
 void buscarElemento();
 //--------------------------
 
-
 const int MAX = 5;
 int lista[MAX]{};
 int nElementos = 0;
 int opcaoEscolhida;
-
 
 int main()
 {
@@ -26,10 +24,12 @@ int main()
 void menu()
 {
 	int op = 0;
-	while (op != 7) {
+	while (op != 7)
+	{
 		system("cls"); // somente no windows
 		cout << "Menu Lista Linear";
-		cout << endl << endl;
+		cout << endl
+			 << endl;
 		cout << "1 - Inicializar Lista \n";
 		cout << "2 - Exibir quantidade de elementos \n";
 		cout << "3 - Exibir elementos \n";
@@ -42,15 +42,20 @@ void menu()
 
 		switch (op)
 		{
-		case 1: inicializar();
+		case 1:
+			inicializar();
 			break;
-		case 2: exibirQuantidadeElementos();
+		case 2:
+			exibirQuantidadeElementos();
 			break;
-		case 3: exibirElementos();
+		case 3:
+			exibirElementos();
 			break;
-		case 4: buscarElemento();
+		case 4:
+			buscarElemento();
 			break;
-		case 5: inserirElemento();
+		case 5:
+			inserirElemento();
 			break;
 		case 6:
 			return;
@@ -66,13 +71,12 @@ void inicializar()
 {
 	nElementos = 0;
 	cout << "Lista inicializada \n";
-
 }
 
-void exibirQuantidadeElementos() {
+void exibirQuantidadeElementos()
+{
 
 	cout << "Quantidade de elementos: " << nElementos << endl;
-
 }
 
 void exibirElementos()
@@ -81,9 +85,11 @@ void exibirElementos()
 	{
 		cout << " A lista esta vazia \n";
 	}
-	else {
+	else
+	{
 		cout << "Elementos: \n";
-		for (int n = 0; n < nElementos; n++) {
+		for (int n = 0; n < nElementos; n++)
+		{
 			cout << lista[n] << endl;
 		}
 	}
@@ -91,15 +97,16 @@ void exibirElementos()
 
 void inserirElemento()
 {
-	if (nElementos < MAX) {
+	if (nElementos < MAX)
+	{
 		cout << "Digite o elemento: ";
 		cin >> lista[nElementos];
 		nElementos++;
 	}
-	else {
+	else
+	{
 		cout << "Lista cheia";
 	}
-
 }
 
 void buscarElemento()
@@ -107,12 +114,21 @@ void buscarElemento()
 	cout << "Digite o elemento a ser buscado: ";
 	cin >> opcaoEscolhida;
 	bool existe = false;
-	for (int x = 0; x < MAX; x++) {
-		if (opcaoEscolhida == lista[x]) {
+	int posicao = -1;
+	for (int x = 0; x < MAX; x++)
+	{
+		if (opcaoEscolhida == lista[x])
+		{
 			existe = true;
+			posicao = x;
 		}
 	}
 
-	if (existe) cout << "\n\nValor " << opcaoEscolhida << " existe na lista\n\n";
-	if (!existe) cout << "\n\nValor " << opcaoEscolhida << " não existe na lista\n\n";
+	if (existe)
+	{
+		cout << "\n\nValor " << opcaoEscolhida << " existe na lista\n\n";
+		cout << "Posicao: " << posicao << endl;
+	}
+	if (!existe)
+		cout << "\n\nValor " << opcaoEscolhida << " nao existe na lista\n\n";
 }
