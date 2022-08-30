@@ -9,6 +9,7 @@ void exibirQuantidadeElementos();
 void exibirElementos();
 void inserirElemento();
 void buscarElemento();
+bool verificaSeExiste(int num);
 //--------------------------
 
 const int MAX = 5;
@@ -19,6 +20,17 @@ int opcaoEscolhida;
 int main()
 {
 	menu();
+
+
+}
+
+bool verificaSeExiste(int num) {
+	for (int x = 0; x <= MAX; x++) {
+		if (num == lista[x]) {
+			return true;
+		}
+	}
+	return false;
 }
 
 void menu()
@@ -99,9 +111,18 @@ void inserirElemento()
 {
 	if (nElementos < MAX)
 	{
+		int valorInserido = 0;
+		int posicao = -1;
 		cout << "Digite o elemento: ";
-		cin >> lista[nElementos];
-		nElementos++;
+		cin >> valorInserido;
+		if (!verificaSeExiste(valorInserido)) {
+			lista[nElementos] = valorInserido;
+			nElementos++;
+		}
+		else {
+			cout << "\n\nVALOR JA EXISTENTE NA LISTA. Por favor, insira outro.\n\n";
+			inserirElemento();
+		}
 	}
 	else
 	{
@@ -132,3 +153,4 @@ void buscarElemento()
 	if (!existe)
 		cout << "\n\nValor " << opcaoEscolhida << " nao existe na lista\n\n";
 }
+
